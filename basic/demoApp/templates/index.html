@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    html page
+
+    {{name}}
+
+    {{tech}}
+
+    <br>
+
+    {% for i in tech %}
+        {% if i == 'python' %}
+        <li style="font-weight: bolder;">{{i}}</li>
+        {% else %}
+        <li>{{i}}</li>
+        {% endif %}
+    {% endfor %}
+    
+    <h1>html form</h1>
+    <form method="post" action="{% url 'get_form_data' %}">
+        {% csrf_token %}
+        <input type="text" name="fullname" /><br>
+        <input type="email" name="email" /><br>
+        <input type="submit" />
+    </form>
+    
+    <h1>django form</h1>
+    <form method="post" action="{% url 'get_form_data' %}">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" />
+    </form>
+</body>
+</html>
