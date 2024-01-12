@@ -16,6 +16,10 @@ def html_page(request):
     }
     return render(request, "index.html", data)
 
+def page2(request):
+    
+    return render(request, "page2.html")
+
 def get_form_data_and_save(request):
     print(request.POST)
 
